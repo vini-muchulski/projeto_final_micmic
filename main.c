@@ -171,7 +171,21 @@ void main(void)
            temperatura_do_usuario--;
        }
        if(OK_BTN){
-           temperatura_requerida = temperatura_do_usuario
+           temperatura_requerida = temperatura_do_usuario;
+           
+           if(temperatura_do_sensor < temperatura_requerida){
+               while(temperatura_do_sensor < temperatura_requerida){
+               ligar_aquecedor();
+               
+               }
+               desligar_aquecedor(); // sai do while qnd a temperatura requrida for igual 
+                                       // a temperatura do ambiente e desliga o aquecedor
+           }
+           
+           else{
+               desligar_aquecedor();
+               
+           }
        }
        
        
@@ -200,11 +214,17 @@ Assim lê-se a informação do sensor de temperatura na entrada analógica AN1 e con
      */
 }
 
- float calcTemperatura(float Tensao){
+ /*
+  * 
+  * float calcTemperatura(float Tensao){
     float Temperatura = (Tensao - 1.6111)/(-0.0218);    // Equação normalizada da temperatura
     valor = Temperatura;	
     return valor;
+  * 
+  * 
 }
+  * 
+  * */
 
 /* 
 Função que calcula temperatura  baseada na linearidade da resistencia do sensor que foi usado como referencia em aula.
@@ -265,6 +285,6 @@ void ligar_aquecedor(){
 }
 
 void desligar_aquecedor(){
-    // desliga LED
+    // desliga aquecedor
   PORTBbits.RB7 = 0; 
 }
