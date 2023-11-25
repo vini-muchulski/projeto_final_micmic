@@ -19,8 +19,8 @@ int valor; // var para guardar valor da conversao
 #define DEC_BTN !PORTDbits.RD1 // Decrement button 
 #define OK_BTN !PORTDbits.RD2 // botao que o usuario aperta qnd for confirmar a temperatura requerida
 
-#define OUT_UNI PORTB // Unity display
-#define OUT_DEZ PORTC // Tens display  
+#define OUT_UNI PORTC // Unity display
+#define OUT_DEZ PORTB // Tens display  
 
 #define FLAG_TEMPORIZER flagsbits.f0 // Temporizer flag
 
