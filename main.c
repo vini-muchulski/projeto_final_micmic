@@ -130,6 +130,12 @@ void main(void)
    
    
    //****************************************************************************************
+   
+   // configurações e setup
+
+  OUT_UNI = 0;
+  OUT_DEZ = 0;
+  
    TRISBbits.TRISB7 = 0; // RB7 como saída
    
    ADCON1bits.PCFG0 = 1; // RA0 configurado como I/O digital
@@ -175,7 +181,16 @@ void main(void)
            
            if(temperatura_do_sensor < temperatura_requerida){
                while(temperatura_do_sensor < temperatura_requerida){
+                   
                ligar_aquecedor();
+               temporizer();
+               
+               
+               valor_do_sensor = ADRESH; // lê o valor convertido
+               temperatura_do_sensor = calcular_temperatura(valor_do_sensor);
+                
+               temporizer();
+       
                
                }
                desligar_aquecedor(); // sai do while qnd a temperatura requrida for igual 
