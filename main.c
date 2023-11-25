@@ -143,7 +143,7 @@ void main(void)
     
     float temperatura_do_usuario = 0;
     float temperatura_requerida;
-    int valor_do_sensor;
+    float valor_do_sensor;
      float temperatura_do_sensor;
      
     
