@@ -4,10 +4,13 @@
 #pragma config BOREN = OFF       // Brown-out Reset Enable bit (BOR enabled)
 #pragma config LVP = OFF        // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3 is digital I/O, HV on MCLR must be used for programming)
 #pragma config CPD = OFF        // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)
-#pragma config WRT = OFF        // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
+#pragma config WRT = OFF       // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
 #pragma config CP = OFF         // Flash Program Memory Code Protection bit (Code protection off)
 
+
+
 #include <xc.h>            // Inclusao da biblioteca do compilador
+
 
 #define _XTAL_FREQ 4000000 // fosc 4Mhz neste caso
 
@@ -91,6 +94,7 @@ void main(void)
    ADCON1bits.PCFG1 = 1;     // Configura as entradas analogicas
    ADCON1bits.PCFG2 = 1;     // Configura as entradas analogicas
    ADCON1bits.PCFG3 = 1;     // Configura as entradas analogicas
+   
 
    // Define o clock de conversao
    ADCON0bits.ADCS0 = 0  ;   // Confirmando default Fosc/2
@@ -131,15 +135,14 @@ void main(void)
    
    //****************************************************************************************
    
-   // configurações e setup
+   // configuraÃ§Ãµes e setup
 
   OUT_UNI = 0;
   OUT_DEZ = 0;
   
-   TRISBbits.TRISB7 = 0; // RB7 como saída
-   
-   ADCON1bits.PCFG0 = 1; // RA0 configurado como I/O digital
-   ADCON1bits.PCFG1 = 0; // RA1 configurado como entrada analógica
+   TRISBbits.TRISB7 = 0; // RB7 como saÃ­da 
+  ADCON1bits.PCFG0 = 1; // RA0 configurado como I/O digital
+   ADCON1bits.PCFG1 = 0; // RA1 configurado como entrada analÃ³gica
    
    
    
@@ -155,11 +158,14 @@ void main(void)
     
    while (1)   //loop infinito
    {
+       ADCON0bits.GO = 1; // Inicia a conversÃ£o
+        while(ADCON0bits.GO == 1) {}; // Espera atÃ© a conversÃ£o acabar
       // ADCON0bits.GO = 1;  // INICIA CONVERS?O
      //  __delay_us(10);     // Tempo de conversao
      //  __delay_ms(1);      // Tempo de conversao
        
-       valor_do_sensor = ADRESH; // lê o valor convertido
+       
+       valor_do_sensor = ADRESH; // lÃª o valor convertido
        temperatura_do_sensor = calcular_temperatura(valor_do_sensor);
        
        
@@ -186,7 +192,7 @@ void main(void)
                temporizer();
                
                
-               valor_do_sensor = ADRESH; // lê o valor convertido
+               valor_do_sensor = ADRESH; // lÃª o valor convertido
                temperatura_do_sensor = calcular_temperatura(valor_do_sensor);
                 
                temporizer();
@@ -214,25 +220,25 @@ void main(void)
 
 float calcular_temperatura(float valor){
     float temperatura;
-    temperatura = (valor * 5 * 100) / 1023; // LM35 - 10mV/oC, tensão alimentação 5V
+    temperatura = (valor * 5 * 100) / 1023; // LM35 - 10mV/oC, tensÃ£o alimentaÃ§Ã£o 5V
     return temperatura;
     
     
     /*
      Onde:
 
-5 = tensão alimentação em Volts
+5 = tensÃ£o alimentaÃ§Ã£o em Volts
 100 = fator escala, 10mV -> 0,01V (100x)
-1023 = resolução conversor AD
+1023 = resoluÃ§Ã£o conversor AD
 Exibir ou usar o valor de temperatura para o controle desejado.
-Assim lê-se a informação do sensor de temperatura na entrada analógica AN1 e converte para temperatura em oC.
+Assim lÃª-se a informaÃ§Ã£o do sensor de temperatura na entrada analÃ³gica AN1 e converte para temperatura em oC.
      */
 }
 
  /*
   * 
   * float calcTemperatura(float Tensao){
-    float Temperatura = (Tensao - 1.6111)/(-0.0218);    // Equação normalizada da temperatura
+    float Temperatura = (Tensao - 1.6111)/(-0.0218);    // EquaÃ§Ã£o normalizada da temperatura
     valor = Temperatura;	
     return valor;
   * 
@@ -242,7 +248,7 @@ Assim lê-se a informação do sensor de temperatura na entrada analógica AN1 e con
   * */
 
 /* 
-Função que calcula temperatura  baseada na linearidade da resistencia do sensor que foi usado como referencia em aula.
+FunÃ§Ã£o que calcula temperatura  baseada na linearidade da resistencia do sensor que foi usado como referencia em aula.
 */
 
 
@@ -303,3 +309,4 @@ void desligar_aquecedor(){
     // desliga aquecedor
   PORTBbits.RB7 = 0; 
 }
+
