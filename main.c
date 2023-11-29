@@ -12,6 +12,7 @@
 #include <xc.h>            // Inclusao da biblioteca do compilador
 
 
+
 #define _XTAL_FREQ 4000000 // fosc 4Mhz neste caso
 
 #define LED PORTCbits.RC3  // Somente para facilitar a leitura do programa
@@ -40,7 +41,7 @@ void ligar_aquecedor();
 
 void desligar_aquecedor();
 
-
+unsigned int ADC_Read(unsigned int channel);
 
 
 
@@ -56,18 +57,17 @@ void desligar_aquecedor();
 //*** subrotina para tratar a interrrup??o *************************************
 void __interrupt() TrataInt(void)
 {
-  if (ADIF)  //foi a interrupcao de final de conversao AD?
+  if (PIR1bits.ADIF)  //foi a interrupcao de final de conversao AD?
      {
-        PIR1bits.ADIF = 0; //reseta o flag da interrup??o
-
-        valor = ADRESH;    // Passa valores convertido do reg para a variavel
+        PIR1bits.ADIF = 0; //reseta o flag da interrupcao
+        valor = (ADRESH << 8) | ADRESL;;    // Passa valores convertido do reg para a variavel
         PORTB = (unsigned char)valor;    // Coloca os valores convertido no port B em binario
 
         //testa valor da conversao em formato decimal
-        if (valor == 55)
-            LED = 1;
-        else
-            LED = 0;
+        //if (valor == 55)
+        //    LED = 1;
+        //else
+        //    LED = 0;
   }
   return;
 }
@@ -81,7 +81,8 @@ void main(void)
    //** Inicializacoes ************************************************
    TRISB = 0b00000000;       // Configura pinos de entrada(1)e saida (0)
    TRISC = 0b00000000;       // Configura pinos de entrada(1)e saida (0)
-   TRISA = 0b11111111;       // Configura pinos de entrada(1)e saida (0)
+   TRISA = 0xFF;       // Configura pinos de entrada(1)e saida (0)
+   
    OPTION_REGbits.nRBPU = 0; // Ativa resistores de pull-ups
 
    //*** Configura o conversor analogico/digital*******************************
@@ -94,8 +95,8 @@ void main(void)
    ADCON1bits.PCFG1 = 1;     // Configura as entradas analogicas
    ADCON1bits.PCFG2 = 1;     // Configura as entradas analogicas
    ADCON1bits.PCFG3 = 1;     // Configura as entradas analogicas
+   ADCON0bits.CHS = 0;
    
-
    // Define o clock de conversao
    ADCON0bits.ADCS0 = 0  ;   // Confirmando default Fosc/2
    ADCON0bits.ADCS1 = 0  ;   // Confirmando default Fosc/2
@@ -144,7 +145,8 @@ void main(void)
   ADCON1bits.PCFG0 = 1; // RA0 configurado como I/O digital
    ADCON1bits.PCFG1 = 0; // RA1 configurado como entrada analógica
    
-   
+   ADCON0 = 0x81;
+   ADCON1 = 010000000;
    
    ADCON0bits.CHS0 = 0; 
     ADCON0bits.CHS1 = 1; // Canal AN1 selecionado
@@ -154,12 +156,16 @@ void main(void)
     float temperatura_requerida;
     float valor_do_sensor;
      float temperatura_do_sensor;
-     
-    
+   __delay_us(20);
+   ADCON0bits.GO = 1; // Inicia a conversão
+   
+   
    while (1)   //loop infinito
    {
-       ADCON0bits.GO = 1; // Inicia a conversão
-        while(ADCON0bits.GO == 1) {}; // Espera até a conversão acabar
+       //ADRESH = 0;
+       //ADRESL = 0;
+ 
+       // while(ADCON0bits.GO == 1) {}; // Espera até a conversão acabar
       // ADCON0bits.GO = 1;  // INICIA CONVERS?O
      //  __delay_us(10);     // Tempo de conversao
      //  __delay_ms(1);      // Tempo de conversao
@@ -309,4 +315,3 @@ void desligar_aquecedor(){
     // desliga aquecedor
   PORTBbits.RB7 = 0; 
 }
-
