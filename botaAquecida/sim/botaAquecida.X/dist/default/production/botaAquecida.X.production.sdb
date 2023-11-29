@@ -1,0 +1,354 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"242
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"58 C:\Micropic\botaAquecida\sim\botaAquecida.X\main.c
+[v _TrataInt TrataInt `II(v  1 e 1 0 ]
+"75
+[v _main main `(v  1 e 1 0 ]
+"228
+[v _calcular_temperatura calcular_temperatura `(f  1 e 4 0 ]
+"262
+[v _aumentar aumentar `(v  1 e 1 0 ]
+"284
+[v _diminuir diminuir `(v  1 e 1 0 ]
+"303
+[v _temporizer temporizer `(v  1 e 1 0 ]
+"310
+[v _ligar_aquecedor ligar_aquecedor `(v  1 e 1 0 ]
+"315
+[v _desligar_aquecedor desligar_aquecedor `(v  1 e 1 0 ]
+"216 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S295 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"233
+[u S304 . 1 `S295 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES304  1 e 1 @6 ]
+"278
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[s S198 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"295
+[u S207 . 1 `S198 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES207  1 e 1 @7 ]
+[s S254 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"357
+[u S263 . 1 `S254 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES263  1 e 1 @8 ]
+[s S46 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"477
+[s S55 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S60 . 1 `S46 1 . 1 0 `S55 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES60  1 e 1 @11 ]
+[s S22 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"549
+[u S31 . 1 `S22 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES31  1 e 1 @12 ]
+"1152
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1159
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+[s S152 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 GO_nDONE 1 0 :1:2 
+`uc 1 CHS 1 0 :3:3 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1190
+[s S158 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO 1 0 :1:2 
+`uc 1 CHS0 1 0 :1:3 
+`uc 1 CHS1 1 0 :1:4 
+`uc 1 CHS2 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S166 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nDONE 1 0 :1:2 
+]
+[s S169 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO_DONE 1 0 :1:2 
+]
+[u S172 . 1 `S152 1 . 1 0 `S158 1 . 1 0 `S166 1 . 1 0 `S169 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES172  1 e 1 @31 ]
+[s S102 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"1275
+[s S109 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S113 . 1 `S102 1 . 1 0 `S109 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES113  1 e 1 @129 ]
+"1325
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1375
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S220 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1392
+[u S229 . 1 `S220 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES229  1 e 1 @134 ]
+"1437
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+[s S78 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 PSPIE 1 0 :1:7 
+]
+"1635
+[u S87 . 1 `S78 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES87  1 e 1 @140 ]
+"2222
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2229
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+[s S128 . 1 `uc 1 PCFG 1 0 :4:0 
+`uc 1 . 1 0 :2:4 
+`uc 1 ADCS2 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2248
+[s S133 . 1 `uc 1 PCFG0 1 0 :1:0 
+`uc 1 PCFG1 1 0 :1:1 
+`uc 1 PCFG2 1 0 :1:2 
+`uc 1 PCFG3 1 0 :1:3 
+]
+[u S138 . 1 `S128 1 . 1 0 `S133 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES138  1 e 1 @159 ]
+"20 C:\Micropic\botaAquecida\sim\botaAquecida.X\main.c
+[v _valor valor `i  1 e 2 0 ]
+"75
+[v _main main `(v  1 e 1 0 ]
+{
+"155
+[v main@temperatura_do_usuario temperatura_do_usuario `f  1 a 4 12 ]
+"158
+[v main@temperatura_do_sensor temperatura_do_sensor `f  1 a 4 8 ]
+"157
+[v main@valor_do_sensor valor_do_sensor `f  1 a 4 4 ]
+"156
+[v main@temperatura_requerida temperatura_requerida `f  1 a 4 0 ]
+"222
+} 0
+"310
+[v _ligar_aquecedor ligar_aquecedor `(v  1 e 1 0 ]
+{
+"313
+} 0
+"284
+[v _diminuir diminuir `(v  1 e 1 0 ]
+{
+"301
+} 0
+"315
+[v _desligar_aquecedor desligar_aquecedor `(v  1 e 1 0 ]
+{
+"318
+} 0
+"228
+[v _calcular_temperatura calcular_temperatura `(f  1 e 4 0 ]
+{
+"229
+[v calcular_temperatura@temperatura temperatura `f  1 a 4 61 ]
+"228
+[v calcular_temperatura@valor valor `f  1 p 4 57 ]
+"243
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S693 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S698 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S701 . 4 `l 1 i 4 0 `d 1 f 4 0 `S693 1 fAsBytes 4 0 `S698 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S701  1 a 4 25 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 20 ]
+[s S770 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S773 . 2 `s 1 i 2 0 `us 1 n 2 0 `S770 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S773  1 a 2 29 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 24 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 19 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 18 ]
+"8
+[v ___flmul@b b `d  1 p 4 5 ]
+[v ___flmul@a a `d  1 p 4 9 ]
+"205
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `us  1 a 2 2 ]
+"5
+[v __Umul8_16@product product `us  1 a 2 0 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 2 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 4 ]
+"60
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 51 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 44 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 49 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 56 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 55 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 48 ]
+"8
+[v ___fldiv@a a `d  1 p 4 31 ]
+[v ___fldiv@b b `d  1 p 4 35 ]
+"185
+} 0
+"262 C:\Micropic\botaAquecida\sim\botaAquecida.X\main.c
+[v _aumentar aumentar `(v  1 e 1 0 ]
+{
+"281
+} 0
+"303
+[v _temporizer temporizer `(v  1 e 1 0 ]
+{
+"308
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 2 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 1 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 2 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 0 ]
+"44
+} 0
+"242 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@a a `d  1 p 4 12 ]
+[v ___flsub@b b `d  1 p 4 16 ]
+"250
+} 0
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 11 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 10 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 9 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 8 ]
+"10
+[v ___fladd@b b `d  1 p 4 2 ]
+[v ___fladd@a a `d  1 p 4 6 ]
+"237
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 2 ]
+[v ___flge@ff2 ff2 `d  1 p 4 6 ]
+"19
+} 0
+"58 C:\Micropic\botaAquecida\sim\botaAquecida.X\main.c
+[v _TrataInt TrataInt `II(v  1 e 1 0 ]
+{
+"73
+} 0
