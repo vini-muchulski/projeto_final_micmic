@@ -31,7 +31,7 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="52" x="88" flags="00000008" y="200" h="13" pid="3" iid="1">
+   <POPUP w="434" x="88" flags="00000009" y="200" h="216" pid="3" iid="1">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="108" flags="0000000a" y="220" h="32" pid="4" iid="1">
@@ -64,10 +64,10 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="14" x="168" flags="00000008" y="280" h="8" pid="7" iid="1">
+   <POPUP w="130" x="168" flags="00000008" y="280" h="151" pid="7" iid="1">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="8" x="188" flags="80000002" y="300" h="8" pid="8" iid="1">
+   <POPUP w="8" x="188" flags="00000002" y="300" h="8" pid="8" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -77,9 +77,9 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="600" x="208" flags="0000802b" y="320" h="400" pid="1" iid="1">
+   <POPUP w="600" x="147" flags="0000802b" y="524" h="400" pid="1" iid="1">
     <PROPERTIES>
-     <ITEM name="Breakpoint 0">"",02B2,0000,6065,4100,1
+     <ITEM name="Breakpoint 0">"",02B2,0000,D299,4100,1
 </ITEM>
      <ITEM name="CaseSensitive">No</ITEM>
      <ITEM name="DISPADDRS">Yes</ITEM>
